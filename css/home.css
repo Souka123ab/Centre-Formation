@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f2f5ff;
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.btn-secondary a{
+  color:#1976d2;
+}
+.btn-secondary-1 a{
+  color: #7b1fa2;
+}
+.btn-secondary-2 a{
+  color: #303030;
+}
+/* Header Styles */
+.header-homme {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-homme h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Access Cards */
+.access-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+}
+
+.student-card .card-icon {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.instructor-card .card-icon {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.admin-card .card-icon {
+  background: #f2f3f5;
+  color: black;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.card p {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.student-card .btn-primary {
+  background: #1976d2;
+  color: white;
+}
+
+.student-card .btn-primary:hover {
+  background: #1565c0;
+}
+
+.instructor-card .btn-primary {
+  background: #7b1fa2;
+  color: white;
+}
+
+.instructor-card .btn-primary:hover {
+  background: #6a1b9a;
+}
+
+.admin-card .btn-primary {
+  background: #424242;
+  color: white;
+}
+
+.admin-card .btn-primary:hover {
+  background: #303030;
+}
+
+.btn-secondary {
+   background: transparent;
+  color: #1976d2;
+  border: solid #1976d2;
+}
+.btn-secondary-1{
+    background: transparent;
+  color: #7b1fa2;
+  border: solid #7b1fa2;
+
+}
+.btn-secondary-2{
+    background: transparent;
+    color: #303030;
+    border: solid #303030;
+}
+
+.btn-secondary:hover {
+  background: transparent;
+  color: #7b1fa2;
+  border: solid #7b1fa2;
+}
+
+/* Features Section */
+.features {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 2.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.feature-column h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.feature-column ul {
+  list-style: none;
+}
+
+.feature-column li {
+  color: #7f8c8d;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .access-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-buttons {
+    flex-direction: column;
+  }
+
+  .features {
+    padding: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card,
+.features {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.features {
+  animation-delay: 0.3s;
+}

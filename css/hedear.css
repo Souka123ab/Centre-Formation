@@ -1,0 +1,39 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+    /* width: 100%; */
+    padding: 18px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo i{
+      font-size: 23px;
+    color: #2664eb;
+}
+.logo h3{
+   font: caption;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+nav{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+nav i{
+    color: black;
+}
+nav a{
+  text-decoration: none;
+    color: black;
+    font-size: 19px;
+    font-family: sans-serif;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}

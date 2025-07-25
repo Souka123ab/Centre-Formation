@@ -1,0 +1,108 @@
+:root {
+    --bg-body: #f2f5ff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --badge-bg-blue: #dbeafe;
+    --badge-text-blue: #1d4ed8;
+    --text-separator: #9ca3af;
+    --avatar-bg-purple: #8b5cf6;
+
+    --card-bg: white;
+    --shadow-soft: rgba(0, 0, 0, 0.1);
+    --border-card: #e5e7eb;
+
+    --icon-bg-blue: #eff6ff;
+    --icon-text-blue: #2563eb;
+    --icon-bg-green: #f0fdf4;
+    --icon-text-green: #16a34a;
+    --icon-bg-purple: #faf5ff;
+    --icon-text-purple: #9333ea;
+    --icon-bg-gray: #f9fafb;
+    --icon-text-gray: #6b7280;
+    --icon-bg-orange: #ffa726;
+    --icon-bg-red: #ef5350;
+
+    --section-bg: #eff6ff;
+    --section-border: #bfdbfe;
+    --section-title: #1e3a8a;
+    --section-text: #1d4ed8;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--section-title);
+}
+
+.back-arrow {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--section-text);
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.back-arrow:hover {
+    color: var(--text-main);
+}
+
+.cours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.cours-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px var(--shadow-soft);
+    transition: transform 0.2s ease;
+}
+
+.cours-card:hover {
+    transform: translateY(-5px);
+}
+
+.cours-title {
+    font-size: 20px;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.cours-description {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-start {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: var(--section-text);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-start:hover {
+    background-color: var(--section-title);
+}

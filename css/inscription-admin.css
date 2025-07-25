@@ -1,0 +1,143 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+ 
+  background: linear-gradient(135deg, #e0f2f7, #f0e0f7); /* Light blue to light purple gradient */
+  color: #333;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 12px;
+}
+.cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.icon-wrapper {
+  background-color: #f0f4f8; /* Light grey-blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.icon {
+  color: #667eea; /* A shade of purple-blue */
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2d3748;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #718096;
+  margin-bottom: 0;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative; /* For password toggle */
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.password-group input {
+  padding-right: 45px; /* Make space for the toggle button */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(calc(-50% + 10px)); /* Adjust for label height */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #a0aec0;
+  transition: color 0.2s ease-in-out;
+}
+
+.toggle-password:hover {
+  color: #667eea;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #2d3748; /* Dark grey */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #4a5568;
+}
+
+.login-link {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #718096;
+}
+
+.login-link a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+  color: #5a67d8;
+}

@@ -1,0 +1,46 @@
+ body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f2f5ff;
+            color: #333;
+        }
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 15px;
+        }
+        h1 {
+            color: #8B5CF6;
+        }
+        iframe, video, embed {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            border: none;
+        }
+        .pdf-link {
+            display: inline-block;
+            margin-top: 20px;
+            background: #8B5CF6;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #8B5CF6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back{
+            position: relative;
+            left: 20%;
+            width: 19%;
+            top: 15px; 
+        }

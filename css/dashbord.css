@@ -1,0 +1,280 @@
+body {
+  font-family: "Inter", sans-serif; /* Using a common sans-serif font */
+  background-color: #f8f9fa; /* Light grey background */
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1000px; /* Adjusted max-width for better fit */
+  padding: 20px;
+}
+.de{
+    display: flex;
+    justify-content: center;
+}
+.dashboard-title {
+  font-size: 1.8rem; /* Slightly smaller for better balance */
+  font-weight: 700; /* Bold */
+  color: #343a40; /* Dark grey */
+  margin-bottom: 30px;
+  margin-left: 10px; /* Align with card content */
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card,
+.platform-status-card {
+  background-color: #ffffff;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* More pronounced shadow */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.stat-card {
+  gap: 15px;
+  min-height: 100px; /* Ensure consistent card height */
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px; /* Slightly more rounded than card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevent icon wrapper from shrinking */
+}
+
+.icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2; /* Standard stroke width for icons */
+}
+
+/* Icon background and color variations */
+.icon-wrapper.blue {
+  background-color: #e0e7ff; /* Light blue/purple */
+}
+.icon-wrapper.blue svg {
+  color: #667eea; /* Blue */
+}
+
+.icon-wrapper.green {
+  background-color: #e6ffe6; /* Light green */
+}
+.icon-wrapper.green svg {
+  color: #28a745; /* Green */
+}
+
+.icon-wrapper.yellow {
+  background-color: #fffbe6; /* Light yellow */
+}
+.icon-wrapper.yellow svg {
+  color: #ffc107; /* Yellow */
+}
+
+.icon-wrapper.purple {
+  background-color: #f3e6ff; /* Light purple */
+}
+.icon-wrapper.purple svg {
+  color: #8a2be2; /* Purple */
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d; /* Lighter grey for label */
+  margin-bottom: 4px; /* Reduced margin */
+  white-space: nowrap; /* Prevent wrapping for labels */
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700; /* Bold */
+  color: #343a40; /* Dark grey */
+  line-height: 1; /* Adjust line height */
+}
+
+/* Platform Status Card */
+.platform-status-card {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+}
+
+.platform-status-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+.platform-status-card .card-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.platform-status-card .card-header svg {
+  color: #343a40; /* Dark grey for settings icon */
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.status-alert {
+  background-color: #e6ffe6; /* Light green */
+  border: 1px solid #28a745; /* Green border */
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.status-alert svg {
+  color: #28a745; /* Green for shield icon */
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-top: 2px; /* Slight adjustment for vertical alignment */
+}
+
+.alert-title {
+  font-weight: 600; /* Semi-bold */
+  color: #28a745;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.alert-message {
+  font-size: 0.9rem;
+  color: #28a745;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .dashboard-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    gap: 15px;
+  }
+
+  .stat-card {
+    flex-direction: row; /* Keep horizontal layout for cards */
+    justify-content: flex-start;
+    padding: 15px;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+
+  .platform-status-card {
+    padding: 20px;
+  }
+
+  .platform-status-card .card-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .status-alert {
+    flex-direction: row;
+    padding: 12px;
+  }
+
+  .alert-title {
+    font-size: 0.95rem;
+  }
+
+  .alert-message {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+
+  .dashboard-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .icon-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .platform-status-card {
+    padding: 15px;
+  }
+
+  .platform-status-card .card-header h2 {
+    font-size: 1rem;
+  }
+
+  .status-alert {
+    padding: 10px;
+  }
+
+  .status-alert svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .alert-title {
+    font-size: 0.9rem;
+  }
+
+  .alert-message {
+    font-size: 0.8rem;
+  }
+}

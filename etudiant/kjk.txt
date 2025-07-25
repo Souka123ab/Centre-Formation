@@ -1,0 +1,22 @@
+function navigateTo(page) {
+    switch(page) {
+        case 'courses':
+            window.location.href = 'mes-cours.php';
+            break;
+        case 'planning':
+            window.location.href = 'planning.php';
+            break;
+        case 'progression':
+            window.location.href = 'progression.php';
+            break;
+        case 'profil':
+            window.location.href = 'profil.php';
+            break;
+        case 'formations-disponibles':
+            window.location.href = 'formations-disponibles.php';
+            break;
+        case 'quizzes':
+            window.location.href = 'quizzes.php';
+            break;
+    }
+}
