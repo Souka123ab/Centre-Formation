@@ -33,24 +33,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo->beginTransaction();
 
-        // Mise à jour du quiz
-        $new_title = trim($_POST['quiz_title']);
-        $new_desc = trim($_POST['quiz_description']);
+        // Vérifier et nettoyer les champs principaux
+        $new_title = isset($_POST['quiz_title']) ? trim($_POST['quiz_title']) : '';
+        $new_desc = isset($_POST['quiz_description']) ? trim($_POST['quiz_description']) : '';
 
+        if ($new_title === '') {
+            throw new Exception("Le titre du quiz est requis.");
+        }
+
+        // Mise à jour du quiz
         $update_quiz = $pdo->prepare("UPDATE quizzes SET title = ?, description = ? WHERE id = ?");
         $update_quiz->execute([$new_title, $new_desc, $quiz_id]);
 
-        // Mise à jour des questions et options
-        foreach ($_POST['questions'] as $q_id => $q_data) {
-            $question_text = trim($q_data['question']);
-            $update_question = $pdo->prepare("UPDATE questions SET question_text = ? WHERE id = ?");
-            $update_question->execute([$question_text, $q_id]);
+        // Vérification des questions
+        if (isset($_POST['questions']) && is_array($_POST['questions'])) {
+            foreach ($_POST['questions'] as $q_id => $q_data) {
+                $question_text = isset($q_data['question']) ? trim($q_data['question']) : '';
 
-            // Options
-            foreach ($q_data['options'] as $opt_id => $opt_text) {
-                $is_correct = ($q_data['correct_option'] == $opt_id) ? 1 : 0;
-                $update_option = $pdo->prepare("UPDATE options SET option_text = ?, is_correct = ? WHERE id = ?");
-                $update_option->execute([trim($opt_text), $is_correct, $opt_id]);
+                if ($question_text === '') {
+                    throw new Exception("Le texte de la question ne peut pas être vide.");
+                }
+
+                $update_question = $pdo->prepare("UPDATE questions SET question_text = ? WHERE id = ?");
+                $update_question->execute([$question_text, $q_id]);
+
+                if (isset($q_data['options']) && is_array($q_data['options'])) {
+                    foreach ($q_data['options'] as $opt_id => $opt_text) {
+                        $is_correct = (isset($q_data['correct_option']) && $q_data['correct_option'] == $opt_id) ? 1 : 0;
+                        $update_option = $pdo->prepare("UPDATE options SET option_text = ?, is_correct = ? WHERE id = ?");
+                        $update_option->execute([trim($opt_text), $is_correct, $opt_id]);
+                    }
+                }
             }
         }
 

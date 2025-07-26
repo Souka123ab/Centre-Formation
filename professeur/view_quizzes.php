@@ -1,28 +1,24 @@
 <?php
-// Include database connection file
-session_start(); // Add this line
+session_start();
 require_once '../config/database.php';
 
-try {
-    // Check if $pdo is set
-    if (!isset($pdo)) {
-        throw new Exception("Database connection not established.");
-    }
-
-    // Check if user is logged in
-    if (!isset($_SESSION['user_id'])) {
-        header('Location: ../auth/loginprofesseur.php');
-        exit;
-    }
-    $user_id = $_SESSION['user_id'];
-
-    // Fetch quizzes created by the logged-in user
-    $quiz_stmt = $pdo->prepare("SELECT * FROM quizzes WHERE created_by = ? ORDER BY created_at DESC");
-    $quiz_stmt->execute([$user_id]);
-    $quizzes = $quiz_stmt->fetchAll();
-} catch (\PDOException | Exception $e) {
-    $error_message = "Error fetching quizzes: " . $e->getMessage();
+// Vérifie si connecté et formateur
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'formateur') {
+    header('Location: ../auth/loginprofesseur.php');
+    exit;
 }
+
+$user_id = $_SESSION['user_id'];
+
+// Requête pour récupérer les quizzes du formateur connecté
+$quiz_stmt = $pdo->prepare("SELECT * FROM quizzes ORDER BY created_at DESC");
+$quiz_stmt->execute();
+$quizzes = $quiz_stmt->fetchAll();
+// echo "<pre>";
+// echo "Formateur connecté ID = " . $user_id . "\n\n";
+// print_r($quizzes);
+// echo "</pre>";
+
 ?>
 
 <!DOCTYPE html>
