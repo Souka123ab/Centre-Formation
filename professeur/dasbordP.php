@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'formateur') {
     ?>
     <div class="container">
         <!-- Header -->
- <header class="header">
+<header class="header">
     <div class="user-info">
         <h1>
             Bienvenue,
@@ -34,16 +34,14 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'formateur') {
                     : 'Utilisateur'; ?>
             </span>
         </h1>
-
         <?php if (isset($_SESSION['role'], $_SESSION['email'])): ?>
             <p class="user-role">
                 <?= ucfirst($_SESSION['role']) . ' • ' . htmlspecialchars($_SESSION['email']) ?>
             </p>
         <?php endif; ?>
     </div>
-
     <div class="profile-icon">
-        <i class="fas fa-book"></i>
+        <a href="profil.php"><i class="fas fa-book"></i></a>
     </div>
 </header>
 

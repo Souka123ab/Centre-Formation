@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize dashboard
     initializeDashboard();
 });
+// document.querySelector('.profile-icon').addEventListener('click', function() {
+//     window.location.href = 'profile.php';
+// });
 
 function initializeDashboard() {
     // Add hover effects to cards
